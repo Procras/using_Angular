@@ -16,11 +16,15 @@
         <input type="checkbox" ng-model="completed" ng-change="todo.toggle(completed);">
         {{ todo.text }}: {{ todo.completed ? "completed" : "not completed" }}
         <!-- <button ng-click="todo.complete();">Complete</button> -->
+        <button ng-click="ctrl.edit(todo)">Edit</button>
+        <button ng-click="ctrl.delete(todo)">Delete</button>
       </p>
       <input type="text" ng-model="todoText">
       <button ng-click="ctrl.addToDo(todoText);">Add a ToDo</button>
-      <button ng-click="ctrl.removeToDo();">Remove last ToDo</button>
+      <!-- <button ng-click="ctrl.removeToDo();">Remove last ToDo</button> -->
     </div>
-
+    <div>
+      {{ todo.text }}
+    </div>
   </body>
 </html>

@@ -9,5 +9,14 @@ toDoApp.controller('ToDoController', ['ToDoService', 'ToDoFactory', function(ToD
 
   self.removeToDo = function() {
     self.todos.pop();
-  }
+  };
+
+  self.delete = function(todo) {
+    for (var i = 0; i < self.todos.length; i++) {
+      if (self.todos[i].text === todo.text) {
+          self.todos.splice(i, 1);
+          break;
+      };
+    };
+  };
 }]);
